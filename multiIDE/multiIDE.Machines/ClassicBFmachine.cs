@@ -202,7 +202,7 @@ namespace multiIDE.Machines
         public int CodeLength { get { return _CodeLength; } }
         //
         [Category("Running State"), ReadOnly(false)]
-        public bool Programmed { get { return _Programmed; } }
+        public bool IsProgrammed { get { return _Programmed; } }
         //
         [Category("Running State"), ReadOnly(false)]
         public VirtualMachineRunningStatus Status { get { return _Status; } }

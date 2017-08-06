@@ -89,7 +89,7 @@ namespace multiIDE
         #region Running State properties
         Task<VirtualMachineRunResult> RunningTask { get; }
         byte[] RAM { get; set; }
-        bool Programmed { get; }
+        bool IsProgrammed { get; }
         int CodeLength { get; }
         VirtualMachineRunningStatus Status { get; }
         int NextSymbol { get; set; }

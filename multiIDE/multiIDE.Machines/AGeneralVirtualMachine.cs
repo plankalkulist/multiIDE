@@ -230,9 +230,9 @@ namespace multiIDE.Machines
         }
         //
         [Category("Running State"), ReadOnly(false)]
-        public virtual bool Programmed
+        public virtual bool IsProgrammed
         {
-            get { return _Programmed; }
+            get { return _IsProgrammed; }
         }
         //
         [Category("Running State"), ReadOnly(false)]
@@ -304,7 +304,7 @@ namespace multiIDE.Machines
         protected Task<VirtualMachineRunResult> _RunningTask;
         protected byte[] MRAM;
         protected int _CodeLength;
-        protected bool _Programmed;
+        protected bool _IsProgrammed;
         protected VirtualMachineRunningStatus _Status;
         protected int _NextSymbol;
         protected int _ActionCell;
@@ -393,7 +393,7 @@ namespace multiIDE.Machines
             {
                 MRAM[A] = (byte)(programCode[A]);
             }
-            _Programmed = true;
+            _IsProgrammed = true;
         }
 
         #region Running subs
@@ -401,7 +401,7 @@ namespace multiIDE.Machines
         //
         public virtual async Task<VirtualMachineActionPosition> PauseAsync()
         {
-            if (!_Programmed)
+            if (!_IsProgrammed)
                 throw new MachineNotProgrammedYetException();
 
             if (_Status == VirtualMachineRunningStatus.Runtime || _Status == VirtualMachineRunningStatus.Stepping)
@@ -430,7 +430,7 @@ namespace multiIDE.Machines
         //
         public virtual async Task<VirtualMachineActionPosition> StepAsync()
         {
-            if (!_Programmed)
+            if (!_IsProgrammed)
                 throw new MachineNotProgrammedYetException();
 
             switch (_Status)
@@ -459,7 +459,7 @@ namespace multiIDE.Machines
         //
         public virtual async Task<VirtualMachineActionPosition> BreakAsync()
         {
-            if (!_Programmed)
+            if (!_IsProgrammed)
                 throw new MachineNotProgrammedYetException();
 
             if (_Status != VirtualMachineRunningStatus.StandBy && _Status != VirtualMachineRunningStatus.Breaking)
@@ -487,7 +487,7 @@ namespace multiIDE.Machines
         //
         public virtual async Task TerminateAsync()
         {
-            if (!_Programmed)
+            if (!_IsProgrammed)
                 throw new MachineNotProgrammedYetException();
 
             if (_RunningTask?.Status == TaskStatus.Running)
@@ -521,7 +521,7 @@ namespace multiIDE.Machines
             _RunningTask = null;
             MRAM = new byte[_CaretBound - 1];
             _CodeLength = 0;
-            _Programmed = false;
+            _IsProgrammed = false;
             _NextSymbol = 0;
             _ActionCell = 0;
         }

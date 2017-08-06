@@ -212,7 +212,7 @@ namespace multiIDE.Machines
 
             MRAM = new byte[_CaretBound - 1];
             _CodeLength = 0;
-            _Programmed = false;
+            _IsProgrammed = false;
             _Status = VirtualMachineRunningStatus.StandBy;
             _NextSymbol = 0;
             _ActionCell = 0;
@@ -237,7 +237,7 @@ namespace multiIDE.Machines
 
             MRAM = new byte[_CaretBound - 1];
             _CodeLength = 0;
-            _Programmed = false;
+            _IsProgrammed = false;
             _Status = VirtualMachineRunningStatus.StandBy;
             _NextSymbol = 0;
             _ActionCell = 0;
@@ -251,7 +251,7 @@ namespace multiIDE.Machines
         #region Running subs
         public override async Task<VirtualMachineRunResult> StartAsync()
         {
-            if (!_Programmed)
+            if (!_IsProgrammed)
                 throw new MachineNotProgrammedYetException();
 
             VirtualMachineRunResult runResult;
@@ -307,7 +307,7 @@ namespace multiIDE.Machines
                 ))
                 throw new ArgumentException("Specified status should be either Runtime or Pausing.", "withSpecifiedStatus");
 
-            if (!_Programmed)
+            if (!_IsProgrammed)
                 throw new MachineNotProgrammedYetException();
 
             VirtualMachineRunResult RES;
@@ -347,7 +347,7 @@ namespace multiIDE.Machines
 
         public virtual async Task<VirtualMachineActionPosition> StepOverAsync()
         {
-            if (!_Programmed)
+            if (!_IsProgrammed)
                 throw new MachineNotProgrammedYetException();
 
             switch (_Status)
@@ -387,7 +387,7 @@ namespace multiIDE.Machines
             _RunningTask = null;
             MRAM = new byte[_CaretBound - 1];
             _CodeLength = 0;
-            _Programmed = false;
+            _IsProgrammed = false;
             _NextSymbol = 0;
             _ActionCell = 0;
             _ActionInputPortIndex = 0;
