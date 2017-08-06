@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EF5F20A9-801A-460E-9C33-678F9C7AAF4C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>multiIDE</RootNamespace>
+    <AssemblyName>multiIDE.Commons</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Serialization" />
+    <Reference Include="XBinary">
+      <HintPath>..\..\..\..\XBinary\XBinary\bin\Debug\XBinary.dll</HintPath>
+    </Reference>
+    <Reference Include="XString">
+      <HintPath>..\..\..\..\XString\XString\bin\Debug\XString.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common Static Tools\CommonConstants.cs" />
+    <Compile Include="Component Building\IComponentBuilder.cs" />
+    <Compile Include="Component Building\IComponentTypeInfo.cs" />
+    <Compile Include="Component Building\Type Infos\CodeEditorTypeInfo.cs" />
+    <Compile Include="Component Building\Type Infos\ComponentTypeInfo.cs" />
+    <Compile Include="Component Building\Type Infos\InputDeviceTypeInfo.cs" />
+    <Compile Include="Component Building\Type Infos\InputPortTypeInfo.cs" />
+    <Compile Include="Component Building\Type Infos\OutputDeviceTypeInfo.cs" />
+    <Compile Include="Component Building\Type Infos\OutputPortTypeInfo.cs" />
+    <Compile Include="Component Building\Type Infos\VirtualMachineTypeInfo.cs" />
+    <Compile Include="Components Common Attributes\LockingRequiredAttribute.cs" />
+    <Compile Include="Components Common Attributes\DescriptionAttribute.cs" />
+    <Compile Include="Components Common Attributes\AvailableWhenInitializedOnlyAttribute.cs" />
+    <Compile Include="Components Common Attributes\InitializeAfterCreateAttribute.cs" />
+    <Compile Include="Components Common Attributes\MenuBrowsableAttribute.cs" />
+    <Compile Include="IComponent.cs" />
+    <Compile Include="IDE Components Exceptions\CodePreprocessingException.cs" />
+    <Compile Include="IDE Components Interfaces\ICodeEditor.cs" />
+    <Compile Include="IDE Components Interfaces\IExtraIdeComponent.cs" />
+    <Compile Include="IDE Components Interfaces\IInputPort.cs" />
+    <Compile Include="Workplace Components Interfaces\IO Device Optional Interfaces\IFileInputable.cs" />
+    <Compile Include="Workplace Components Interfaces\IO Device Optional Interfaces\IFileOutputable.cs" />
+    <Compile Include="Workplace Components Interfaces\IO Device Optional Interfaces\IReinitializeable.cs" />
+    <Compile Include="IDE Components Interfaces\IOutputPort.cs" />
+    <Compile Include="IDE Components Interfaces\IVirtualMachine.cs" />
+    <Compile Include="IDE Components Interfaces\Virtual Machine Optional Interfaces\IMultiIOable.cs" />
+    <Compile Include="IDE Components Interfaces\Virtual Machine Optional Interfaces\IPausable.cs" />
+    <Compile Include="IDE Components Interfaces\Virtual Machine Optional Interfaces\IStartWithSpecifiedStatusable.cs" />
+    <Compile Include="IDE Components Interfaces\Virtual Machine Optional Interfaces\IStateShotable.cs" />
+    <Compile Include="IDE Components Interfaces\Virtual Machine Optional Interfaces\IStepOverable.cs" />
+    <Compile Include="IDE Components Interfaces\Virtual Machine Optional Interfaces\ISteppable.cs" />
+    <Compile Include="IDE Components Interfaces\Virtual Machine Optional Interfaces\ISupportCheckable.cs" />
+    <Compile Include="IDE Components Interfaces\IIdeComponent.cs" />
+    <Compile Include="Common Static Tools\IOmonitor.cs" />
+    <Compile Include="IWorkplace.cs" />
+    <Compile Include="IDE Components Exceptions\MachineRunningException.cs" />
+    <Compile Include="IDE Components Exceptions\UnhandledMachineProgramRuntimeErrorException.cs" />
+    <Compile Include="IDE Components Exceptions\MachineDesignRuntimeException.cs" />
+    <Compile Include="Workplace Components Interfaces\IExtraWorkplaceComponent.cs" />
+    <Compile Include="Workplace Components Interfaces\IWorkplaceComponent.cs" />
+    <Compile Include="Common Static Tools\MainSymbolService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Common Instance Classes\SomeFile.cs" />
+    <Compile Include="Workplace Components Interfaces\IIDE.cs" />
+    <Compile Include="Workplace Components Interfaces\IInputDevice.cs" />
+    <Compile Include="Workplace Components Interfaces\IMainForm.cs" />
+    <Compile Include="Workplace Components Interfaces\IOutputDevice.cs" />
+    <Compile Include="IDE Components Exceptions\MachineSettingException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Workplace Components Exceptions\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

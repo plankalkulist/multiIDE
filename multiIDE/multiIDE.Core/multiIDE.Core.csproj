@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C544642A-D92B-45F4-B519-D42750AD6934}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>multiIDE</RootNamespace>
+    <AssemblyName>multiIDE.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>multiIDE.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Serialization" />
+    <Reference Include="XBinary">
+      <HintPath>..\..\..\..\XBinary\XBinary\bin\Debug\XBinary.dll</HintPath>
+    </Reference>
+    <Reference Include="XGraphics">
+      <HintPath>..\..\..\..\XGraphics\XGraphics\bin\Debug\XGraphics.dll</HintPath>
+    </Reference>
+    <Reference Include="XString">
+      <HintPath>..\..\..\..\XString\XString\bin\Debug\XString.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common Tools\ComponentBuilder.cs" />
+    <Compile Include="Common Tools\ComponentBuilding.cs" />
+    <Compile Include="Common Tools\DefaultComponentManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog Forms\DllImportDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog Forms\DllImportDialog.Designer.cs">
+      <DependentUpon>DllImportDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Workplace Components\IDE Exceptions\IOPortNullReferenceException.cs" />
+    <Compile Include="Workplace Components\IDE Exceptions\NoFreeIOPortSlotsException.cs" />
+    <Compile Include="Workplace Components\IDE Exceptions\NotSupportedByMachineException.cs" />
+    <Compile Include="Workplace Components\IDE.cs" />
+    <Compile Include="Workplace Components\ComponentManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Workplace Components\ComponentManager.Designer.cs">
+      <DependentUpon>ComponentManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common Tools\SettingWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common Tools\SettingWindow.Designer.cs">
+      <DependentUpon>SettingWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Workplace Components\mdiMultiIDE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Workplace Components\mdiMultiIDE.Designer.cs">
+      <DependentUpon>mdiMultiIDE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog Forms\NewIdeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog Forms\NewIdeDialog.designer.cs">
+      <DependentUpon>NewIdeDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Workplace.cs" />
+    <EmbeddedResource Include="Dialog Forms\DllImportDialog.resx">
+      <DependentUpon>DllImportDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Workplace Components\ComponentManager.resx">
+      <DependentUpon>ComponentManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common Tools\SettingWindow.resx">
+      <DependentUpon>SettingWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Workplace Components\mdiMultiIDE.resx">
+      <DependentUpon>mdiMultiIDE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog Forms\NewIdeDialog.resx">
+      <DependentUpon>NewIdeDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\multiIDE.CodeEditors\multiIDE.CodeEditors.csproj">
+      <Project>{f3f975c8-fd7a-419b-ba64-52558eacfb3b}</Project>
+      <Name>multiIDE.CodeEditors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\multiIDE.Extras\multiIDE.Extras.csproj">
+      <Project>{19503fcf-d724-400d-8c63-2d661f2470be}</Project>
+      <Name>multiIDE.Extras</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\multiIDE.IODevices\multiIDE.IODevices.csproj">
+      <Project>{8df9605a-4ff2-4015-916b-5861eb10f9d7}</Project>
+      <Name>multiIDE.IODevices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\multiIDE.IOPorts\multiIDE.IOPorts.csproj">
+      <Project>{56ade134-87c1-4c14-ab75-b1b5eb8ea027}</Project>
+      <Name>multiIDE.IOPorts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\multiIDE.Machines\multiIDE.Machines.csproj">
+      <Project>{abd5fe18-c92b-4ade-b5ea-c93b853d786d}</Project>
+      <Name>multiIDE.Machines</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\multiIDE.Commons\multiIDE.Commons.csproj">
+      <Project>{ef5f20a9-801a-460e-9c33-678f9c7aaf4c}</Project>
+      <Name>multiIDE.Commons</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
