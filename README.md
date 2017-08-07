@@ -4,7 +4,7 @@ Emulates several virtual machines and provides sharing access to virtual IO devi
 
 ## The multiIDE solution consist of 8 projects:
 
-![architecture view](https://raw.githubusercontent.com/plankalkulist/multiIDE/blob/master/archview070817.png)
+![architecture view](https://github.com/plankalkulist/multiIDE/blob/master/archview070817.png)
 
 
 Test 1.
