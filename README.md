@@ -2,6 +2,11 @@
 
 Emulates several virtual machines and provides sharing access to virtual IO devices.
 
+## The multiIDE solution consist of 8 projects:
+
+![architecture view](https://raw.githubusercontent.com/plankalkulist/multiIDE/blob/master/archview070817.png)
+
+
 Test 1.
 	File > New Workplace
 	click on New IDE button (with white sheet icon) or click in menu or press Ctrl+I
