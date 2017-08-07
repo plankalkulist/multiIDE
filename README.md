@@ -1,27 +1,27 @@
-#multiIDE version 1.0.0.0 pre-alpha by Evgeniy Chaev
+# multiIDE version 1.0.0.0 pre-alpha by Evgeniy Chaev
 
 Emulates several virtual machines and provides sharing access to virtual IO devices.
 
-	##The multiIDE solution consists of 7 projects (except test projects):
+	## The multiIDE solution consists of 7 projects (except test projects):
 
 ![architecture view](https://github.com/plankalkulist/multiIDE/blob/master/archview.png)
 
-	###multiIDE.Core
+	### multiIDE.Core
 		Contains multiIDE core components such as Workplace class, multiIDE form, IDE class and several common tools classes.
-	###multiIDE.Commons
+	### multiIDE.Commons
 		Consists of interfaces for all components of the entire solution, also contains several common classes.
-	###multiIDE.Machines
+	### multiIDE.Machines
 		Provides default set of virtual machines.
-	###multiIDE.CodeEditors
+	### multiIDE.CodeEditors
 		Provides default set of code editors.
-	###multiIDE.IOports
+	### multiIDE.IOports
 		Provides default set of IO ports.
-	###multiIDE.IOdevices
+	### multiIDE.IOdevices
 		Provides default set of IO devices.
-	###multiIDE.Extras
+	### multiIDE.Extras
 		Provides default set of extra components both for a Workplace and for an IDE.
 
-##Some integration testing
+## Some integration testing
 
 ###  Test 1
 	File > New Workplace
