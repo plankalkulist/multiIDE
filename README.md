@@ -25,6 +25,18 @@ Emulates several virtual machines and provides sharing access to virtual IO devi
 ### multiIDE.Extras
 	Provides default set of extra components both for a Workplace and for an IDE.
 
+
+## Some screenshots
+Connecting to a console initialized by another machine:
+![architecture view](https://github.com/plankalkulist/multiIDE/blob/master/screenshot1.png)
+
+Changing console settings, running a machine by step and viewing machine's memory (RAM) at the same time:
+![architecture view](https://github.com/plankalkulist/multiIDE/blob/master/screenshot2.png)
+
+Managing types of components for current workplace:
+![architecture view](https://github.com/plankalkulist/multiIDE/blob/master/screenshot3.png)
+
+
 ## Some integration testing
 
 ### Test 1
