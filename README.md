@@ -12,7 +12,7 @@ Emulates several virtual machines and provides sharing access to virtual IO devi
 ![architecture view](https://github.com/plankalkulist/multiIDE/blob/master/Components%20Inheritance%20Depencies.png)
 ### multiIDE.Core
 	Contains multiIDE core components such as Workplace class, multiIDE form, IDE class and several common tools classes.
-	Type depencies graph:
+	Type dependencies graph:
 ![architecture view](https://github.com/plankalkulist/multiIDE/blob/master/Core%20Assembly%20Type%20Dependencies%20Graph.png)
 ### multiIDE.Machines
 	Provides default set of virtual machines.
