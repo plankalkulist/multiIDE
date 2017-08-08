@@ -10,6 +10,7 @@ Emulates several virtual machines and provides sharing access to virtual IO devi
 	Contains multiIDE core components such as Workplace class, multiIDE form, IDE class and several common tools classes.
 ### multiIDE.Commons
 	Consists of interfaces for all components of the entire solution, also contains several common classes.
+![architecture view](https://github.com/plankalkulist/multiIDE/blob/master/Components%20Inheritance%20Depencies.png)
 ### multiIDE.Machines
 	Provides default set of virtual machines.
 ### multiIDE.CodeEditors
