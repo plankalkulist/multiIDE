@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Drawing;
 using System.Windows.Forms;
 using XSpace;
 
@@ -150,9 +151,7 @@ namespace multiIDE.Extras
             int step = 0;
             int since = 0, length = 0;
             string S = null;
-            //NullReferenceException errNRE = new NullReferenceException();
-            //IndexOutOfRangeException errIOORE = new IndexOutOfRangeException();
-            txtDump.Clear();
+            rtbDump.Clear();
             lblCurrentCell.Text = "Current Cell: " + ParentIDE.Machine.ActionCell.ToString();
             step = 10;
 
@@ -162,7 +161,7 @@ namespace multiIDE.Extras
                 {
                     for (A = since; A < since + length; A += step)
                     {
-                        txtDump.AppendText($"{A,5}: ");
+                        rtbDump.AppendText($"{A,5}: ");
                         S = "";
                         if (ParentIDE.Machine.RAM[A] > 31)
                         {
@@ -172,7 +171,7 @@ namespace multiIDE.Extras
                         {
                             S += ".";
                         }
-                        txtDump.AppendText($"{ParentIDE.Machine.RAM[A],3}");
+                        rtbDump.AppendText($"{ParentIDE.Machine.RAM[A],3}");
 
                         for (B = A + 1; B < A + step; B++)
                         {
@@ -180,20 +179,25 @@ namespace multiIDE.Extras
                                 S += (char)(ParentIDE.Machine.RAM[B]);
                             else
                                 S += ".";
-                            txtDump.AppendText($",{ParentIDE.Machine.RAM[B],3}");
+                            rtbDump.AppendText($",{ParentIDE.Machine.RAM[B],3}");
                         }
-                        txtDump.AppendText("  " + S + Environment.NewLine);
+                        rtbDump.AppendText("  " + S + Environment.NewLine);
+                    }
+
+                    if (ParentIDE.Machine.ActionCell >= since && ParentIDE.Machine.ActionCell < since + length)
+                    {
+                        rtbDump.Select(rtbDump.Text.IndexOf($"{since + ((ParentIDE.Machine.ActionCell - since) / step) * step,5}: ") + 7 + 4 * ((ParentIDE.Machine.ActionCell - since) % step), 3);
+                        rtbDump.SelectionBackColor = Color.Aquamarine;
                     }
                 }
-
             }
             catch (NullReferenceException errNRE)
             {
-                txtDump.Text = "Machine have not initialized yet.";
+                rtbDump.Text = "Machine have not initialized yet.";
             }
             catch (IndexOutOfRangeException errIOORE)
             {
-                txtDump.Text = "Out of the machine's memory range.";
+                rtbDump.Text = "Out of the machine's memory range.";
             }
         }
     }

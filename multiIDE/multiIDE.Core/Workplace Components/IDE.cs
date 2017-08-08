@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Linq;
 using System.Reflection;
 using multiIDE.Extras;
+using System.Threading;
 
 namespace multiIDE
 {

@@ -30,10 +30,10 @@
         {
             this.lblCurrentCell = new System.Windows.Forms.Label();
             this.cmdDump = new System.Windows.Forms.Button();
-            this.txtDump = new System.Windows.Forms.TextBox();
             this.txtLength = new System.Windows.Forms.TextBox();
             this.txtSince = new System.Windows.Forms.TextBox();
             this.chkAutoDump = new System.Windows.Forms.CheckBox();
+            this.rtbDump = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // lblCurrentCell
@@ -54,19 +54,6 @@
             this.cmdDump.Text = "DUMP";
             this.cmdDump.UseVisualStyleBackColor = true;
             this.cmdDump.Click += new System.EventHandler(this.cmdDump_Click);
-            // 
-            // txtDump
-            // 
-            this.txtDump.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDump.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtDump.Location = new System.Drawing.Point(13, 44);
-            this.txtDump.Multiline = true;
-            this.txtDump.Name = "txtDump";
-            this.txtDump.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtDump.Size = new System.Drawing.Size(495, 197);
-            this.txtDump.TabIndex = 6;
             // 
             // txtLength
             // 
@@ -96,15 +83,27 @@
             this.chkAutoDump.Text = "Auto Dump";
             this.chkAutoDump.UseVisualStyleBackColor = true;
             // 
+            // rtbDump
+            // 
+            this.rtbDump.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rtbDump.Location = new System.Drawing.Point(12, 43);
+            this.rtbDump.Name = "rtbDump";
+            this.rtbDump.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.rtbDump.Size = new System.Drawing.Size(495, 197);
+            this.rtbDump.TabIndex = 10;
+            this.rtbDump.Text = "";
+            this.rtbDump.WordWrap = false;
+            // 
             // ViewRAM
             // 
+            this.AcceptButton = this.cmdDump;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(520, 252);
+            this.Controls.Add(this.rtbDump);
             this.Controls.Add(this.chkAutoDump);
             this.Controls.Add(this.lblCurrentCell);
             this.Controls.Add(this.cmdDump);
-            this.Controls.Add(this.txtDump);
             this.Controls.Add(this.txtLength);
             this.Controls.Add(this.txtSince);
             this.Name = "ViewRAM";
@@ -120,9 +119,9 @@
 
         internal System.Windows.Forms.Label lblCurrentCell;
         internal System.Windows.Forms.Button cmdDump;
-        internal System.Windows.Forms.TextBox txtDump;
         internal System.Windows.Forms.TextBox txtLength;
         internal System.Windows.Forms.TextBox txtSince;
         private System.Windows.Forms.CheckBox chkAutoDump;
+        private System.Windows.Forms.RichTextBox rtbDump;
     }
 }

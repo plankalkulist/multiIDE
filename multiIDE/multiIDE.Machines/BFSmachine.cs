@@ -310,7 +310,7 @@ namespace multiIDE.Machines
             if (!_IsProgrammed)
                 throw new MachineNotProgrammedYetException();
 
-            VirtualMachineRunResult RES;
+            VirtualMachineRunResult runResult;
 
             switch (_Status)
             {
@@ -322,8 +322,10 @@ namespace multiIDE.Machines
 
                     try
                     {
-                        RES = await Task.Run<VirtualMachineRunResult>(new Func<VirtualMachineRunResult>(Run)
-                                , _RunningCancellationTokenSource.Token);
+                        _RunningCancellationTokenSource = new CancellationTokenSource();
+                        _RunningTask = Task.Run<VirtualMachineRunResult>(new Func<VirtualMachineRunResult>(Run)
+                            , _RunningCancellationTokenSource.Token);
+                        runResult = await _RunningTask;
                     }
                     catch (OperationCanceledException)
                     {
@@ -336,7 +338,7 @@ namespace multiIDE.Machines
                             _Status = VirtualMachineRunningStatus.StandBy;
                     }
 
-                    return RES;
+                    return runResult;
                 case VirtualMachineRunningStatus.Runtime:
                 case VirtualMachineRunningStatus.Stepping:
                     throw new MachineIsRunningAlreadyException(_NextSymbol, _ActionCell);
@@ -366,7 +368,7 @@ namespace multiIDE.Machines
             await Task.Run(() =>
             {
                 Thread.CurrentThread.Name = $"{this.Title} Stepping-Over Watcher Thread";
-                while (_Status != VirtualMachineRunningStatus.Paused)
+                while (_Status != VirtualMachineRunningStatus.Paused && _Status != VirtualMachineRunningStatus.StandBy)
                 {
                     Thread.Sleep(_StatusWaitingCheckEveryTimeMS);
                 }
