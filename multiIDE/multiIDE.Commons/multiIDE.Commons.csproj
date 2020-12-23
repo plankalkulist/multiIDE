@@ -60,10 +60,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="XBinary">
-      <HintPath>..\..\..\..\XBinary\XBinary\bin\Debug\XBinary.dll</HintPath>
-    </Reference>
-    <Reference Include="XString">
-      <HintPath>..\..\..\..\XString\XString\bin\Debug\XString.dll</HintPath>
+      <HintPath>..\dependencies\src\XBinary\XBinary\bin\Debug\XBinary.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

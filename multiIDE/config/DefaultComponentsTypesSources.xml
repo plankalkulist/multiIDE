@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfComponentTypesAssemblySourceInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ComponentTypesAssemblySourceInfo>
+    <RelativeAssemblyPath>multiIDE.Machines.dll</RelativeAssemblyPath>
+    <TypesToRegister>
+      <ComponentTypeSourceInfo>
+        <TypeFullName>multiIDE.Machines.BFSmachine</TypeFullName>
+        <TextTag />
+        <ShouldBeHidden>false</ShouldBeHidden>
+      </ComponentTypeSourceInfo>
+      <ComponentTypeSourceInfo>
+        <TypeFullName>multiIDE.Machines.ClassicBFmachine</TypeFullName>
+        <TextTag />
+        <ShouldBeHidden>false</ShouldBeHidden>
+      </ComponentTypeSourceInfo>
+    </TypesToRegister>
+  </ComponentTypesAssemblySourceInfo>
+  <ComponentTypesAssemblySourceInfo>
+    <RelativeAssemblyPath>multiIDE.CodeEditors.dll</RelativeAssemblyPath>
+    <TypesToRegister>
+      <ComponentTypeSourceInfo>
+        <TypeFullName>multiIDE.CodeEditors.StdCodeEditor</TypeFullName>
+        <TextTag />
+        <ShouldBeHidden>false</ShouldBeHidden>
+      </ComponentTypeSourceInfo>
+    </TypesToRegister>
+  </ComponentTypesAssemblySourceInfo>
+  <ComponentTypesAssemblySourceInfo>
+    <RelativeAssemblyPath>multiIDE.IOPorts.dll</RelativeAssemblyPath>
+    <TypesToRegister>
+      <ComponentTypeSourceInfo>
+        <TypeFullName>multiIDE.IOPorts.StdInputPort</TypeFullName>
+        <TextTag />
+        <ShouldBeHidden>false</ShouldBeHidden>
+      </ComponentTypeSourceInfo>
+      <ComponentTypeSourceInfo>
+        <TypeFullName>multiIDE.IOPorts.StdOutputPort</TypeFullName>
+        <TextTag />
+        <ShouldBeHidden>false</ShouldBeHidden>
+      </ComponentTypeSourceInfo>
+    </TypesToRegister>
+  </ComponentTypesAssemblySourceInfo>
+  <ComponentTypesAssemblySourceInfo>
+    <RelativeAssemblyPath>multiIDE.Core.exe</RelativeAssemblyPath>
+    <TypesToRegister>
+      <ComponentTypeSourceInfo>
+        <TypeFullName>multiIDE.Extras.SettingWindow</TypeFullName>
+        <TextTag />
+        <ShouldBeHidden>false</ShouldBeHidden>
+      </ComponentTypeSourceInfo>
+      <ComponentTypeSourceInfo>
+        <TypeFullName>multiIDE.Extras.ComponentManager</TypeFullName>
+        <TextTag />
+        <ShouldBeHidden>false</ShouldBeHidden>
+      </ComponentTypeSourceInfo>
+      <ComponentTypeSourceInfo>
+        <TypeFullName>multiIDE.Extras.SettingWindow</TypeFullName>
+        <TextTag />
+        <ShouldBeHidden>false</ShouldBeHidden>
+      </ComponentTypeSourceInfo>
+      <ComponentTypeSourceInfo>
+        <TypeFullName>multiIDE.Commons.DefaultComponentManager</TypeFullName>
+        <TextTag />
+        <ShouldBeHidden>false</ShouldBeHidden>
+      </ComponentTypeSourceInfo>
+    </TypesToRegister>
+  </ComponentTypesAssemblySourceInfo>
+  <ComponentTypesAssemblySourceInfo>
+    <RelativeAssemblyPath>multiIDE.IdeExtras.dll</RelativeAssemblyPath>
+    <TypesToRegister>
+      <ComponentTypeSourceInfo>
+        <TypeFullName>multiIDE.Extras.ViewRAM</TypeFullName>
+        <TextTag />
+        <ShouldBeHidden>false</ShouldBeHidden>
+      </ComponentTypeSourceInfo>
+    </TypesToRegister>
+  </ComponentTypesAssemblySourceInfo>
+  <ComponentTypesAssemblySourceInfo>
+    <RelativeAssemblyPath>multiIDE.IODevices.dll</RelativeAssemblyPath>
+    <TypesToRegister>
+      <ComponentTypeSourceInfo>
+        <TypeFullName>multiIDE.IODevices.ConsoleDevice</TypeFullName>
+        <TextTag />
+        <ShouldBeHidden>false</ShouldBeHidden>
+      </ComponentTypeSourceInfo>
+      <ComponentTypeSourceInfo>
+        <TypeFullName>multiIDE.IODevices.ConstantInputDevice</TypeFullName>
+        <TextTag />
+        <ShouldBeHidden>false</ShouldBeHidden>
+      </ComponentTypeSourceInfo>
+      <ComponentTypeSourceInfo>
+        <TypeFullName>multiIDE.IODevices.ConsoleDevice</TypeFullName>
+        <TextTag />
+        <ShouldBeHidden>false</ShouldBeHidden>
+      </ComponentTypeSourceInfo>
+      <ComponentTypeSourceInfo>
+        <TypeFullName>multiIDE.IODevices.VoidOutputDevice</TypeFullName>
+        <TextTag />
+        <ShouldBeHidden>false</ShouldBeHidden>
+      </ComponentTypeSourceInfo>
+    </TypesToRegister>
+  </ComponentTypesAssemblySourceInfo>
+</ArrayOfComponentTypesAssemblySourceInfo>

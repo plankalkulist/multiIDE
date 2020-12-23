@@ -12,7 +12,7 @@ using System.Xml.Serialization;
 namespace multiIDE
 {
     [Serializable]
-    public struct ComponentTypesAssemblySourceInfo
+    public class ComponentTypesAssemblySourceInfo
     {
         public string RelativeAssemblyPath { get; set; }
         public string FullAssemblyPath { get; set; }
@@ -129,8 +129,10 @@ namespace multiIDE
                 {
                     foreach (var builder in generalizedBuilders)
                     {
-                        sourceInfoPath = File.Exists(sourceInfo.RelativeAssemblyPath) ? sourceInfo.RelativeAssemblyPath
-                                : sourceInfo.FullAssemblyPath;
+                        if (File.Exists(sourceInfo.RelativeAssemblyPath) && !sourceInfo.FullAssemblyPath.IsNotNullOrEmpty())
+                            sourceInfo.FullAssemblyPath = Path.Combine(Directory.GetCurrentDirectory(), sourceInfo.RelativeAssemblyPath);
+                        sourceInfoPath = sourceInfo.FullAssemblyPath;
+                        
                         defaultTypeFullNamesFromDefaultNamespace = builder.GetTypesInfosFrom(sourceInfoPath, true);
                         if ((defaultTypeFullNamesFromDefaultNamespace?.Count ?? 0) > 0)
                             builder.RegisterTypesFrom

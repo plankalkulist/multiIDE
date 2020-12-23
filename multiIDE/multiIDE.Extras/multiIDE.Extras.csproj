@@ -34,7 +34,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="XString">
-      <HintPath>..\..\..\..\XString\XString\bin\Debug\XString.dll</HintPath>
+      <HintPath>..\dependencies\src\XString\XString\bin\Debug\XString.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -39,6 +39,12 @@ Managing types of components for current workplace:
 
 ## Some integration testing
 
+### Before you start
+ To start using multiIDE mind to do following steps:
+ 1. Build dependencies solutions first (located in directory "\multiIDE\dependencies\src\"), i.e. XBinary, XGraphics and XString.
+ 2. Build solution "multiIDE.sln"
+ 3. Copy types config file "DefaultComponentsTypesSources.xml" in app directory - from "\multiIDE\config\" to "\multiIDE\multiIDE.Core\bin\Debug\"
+
 ### Test 1
  1. File > New Workplace
  2. click on New IDE button (with white sheet icon) or click in menu or press Ctrl+I
